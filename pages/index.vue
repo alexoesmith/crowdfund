@@ -3,16 +3,25 @@
     <TheHeader />
     <Banner />
     <div class="space-y-6">
-      <ProductIntro />
+      <ProductIntro @handle-modal="handleModal" />
       <ProductStats :stats="productStats" />
       <ProductInfo>
         <ProductSelect
           v-for="product in products"
           :key="product.id"
           :product="product"
+          @handle-modal="handleModal"
         />
       </ProductInfo>
     </div>
+    <ProductModal v-show="showModal" @handle-modal="handleModal">
+      <ProductSelectModal
+        v-for="product in products"
+        :key="product.id"
+        :product="product"
+        :selectedReward="selectedReward"
+      />
+    </ProductModal>
   </div>
 </template>
 
@@ -23,6 +32,8 @@ import ProductIntro from "../components/ProductIntro.vue";
 import ProductStats from "../components/ProductStats.vue";
 import ProductInfo from "../components/ProductInfo.vue";
 import ProductSelect from "../components/ProductSelect.vue";
+import ProductSelectModal from "../components/ProductSelectModal.vue";
+import ProductModal from "../components/ProductModal.vue";
 
 export default {
   components: {
@@ -31,8 +42,11 @@ export default {
     ProductIntro,
     ProductStats,
     ProductInfo,
-    ProductSelect
+    ProductSelect,
+    ProductModal,
+    ProductSelectModal
   },
+
   data() {
     return {
       products: [
@@ -66,8 +80,19 @@ export default {
         totalToPledge: 100000,
         totalBackers: 5007,
         daysLeft: 56
-      }
+      },
+      showModal: false,
+      selectedReward: null
     };
+  },
+  methods: {
+    handleModal(id) {
+      this.showModal = !this.showModal;
+      this.selectedReward = id;
+    },
+    sayHello() {
+      this.showModal = !this.showModal;
+    }
   }
 };
 </script>

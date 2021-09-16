@@ -1,5 +1,7 @@
 <template>
-  <ProductCardWrapper>
+  <div
+    class="bg-white max-w-[800px] rounded-lg shadow-sm px-10 pt-12 pb-10 m-auto -mt-20 relative"
+  >
     <ProductLogo class="absolute transform -translate-x-1/2 left-1/2 -top-8" />
     <div class="text-center">
       <h2 class="pb-4 text-3xl font-bold">Mastercraft Bamboo Monitor Riser</h2>
@@ -8,7 +10,7 @@
         strain.
       </p>
       <div class="flex items-center justify-between pt-10">
-        <Btn>Back This Project</Btn>
+        <Btn @click.native="handleModal">Back This Project</Btn>
         <div
           class="relative flex items-center hover:cursor-pointer"
           @click="toggleBookmark"
@@ -33,11 +35,10 @@
       </div>
     </div>
   </div>
-  </ProductCardWrapper>
 </template>
 
 <script>
-import ProductCardWrapper from './ProductCardWrapper.vue';
+import ProductCardWrapper from "./ProductCardWrapper.vue";
 import ProductLogo from "./ProductLogo.vue";
 import Btn from "./Btn.vue";
 
@@ -55,6 +56,9 @@ export default {
   methods: {
     toggleBookmark() {
       this.bookmarked = !this.bookmarked;
+    },
+    handleModal() {
+      this.$emit("handle-modal");
     }
   }
 };

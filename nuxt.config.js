@@ -26,7 +26,10 @@ export default {
   css: ["~/assets/css/font.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["@/plugins/aos.client"],
+  plugins: [
+    "@/plugins/aos.client",
+    { src: "@/plugins/vClickOutside", ssr: false }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: false,

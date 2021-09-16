@@ -1,7 +1,7 @@
 <template>
   <div
     class="w-full p-10 border border-gray-300 rounded-lg"
-    :class="{ 'opacity-30 pointer-events-none': product.amountLeft === 0 }"
+    :class="{ '!opacity-30 pointer-events-none': product.amountLeft === 0 }"
     data-aos="fade-up"
   >
     <div class="flex items-center justify-between">
@@ -19,9 +19,12 @@
       <Btn
         :class="{ '!bg-dark-gray': product.amountLeft === 0 }"
         :disabled="product.amountLeft === 0"
-        >Select Reward</Btn
+        @click.native="handleModal(product.id)"
       >
+        Select Reward
+      </Btn>
     </div>
+    <slot></slot>
   </div>
 </template>
 
@@ -32,6 +35,11 @@ export default {
   props: ["product"],
   components: {
     Btn
+  },
+  methods: {
+    handleModal(id) {
+      this.$emit("handle-modal", id);
+    }
   }
 };
 </script>
