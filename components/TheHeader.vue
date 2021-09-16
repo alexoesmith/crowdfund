@@ -1,5 +1,5 @@
 <template>
-  <header class="absolute top-0 z-20 w-full py-10">
+  <header class="absolute top-0 w-full py-10">
     <div class="container flex items-center justify-between">
       <Logo />
       <nav>

@@ -29,7 +29,8 @@
       </div>
       <div>
         <p class="text-xl font-bold">
-          {{ product.amountLeft }} <span class="text-dark-gray">left</span>
+          {{ product.amountLeft }}
+          <span class="text-sm font-normal text-dark-gray">left</span>
         </p>
       </div>
     </div>
@@ -66,7 +67,7 @@ export default {
   props: ["product", "selectedReward"],
   data() {
     return {
-      selected: null
+      selected: false
     };
   },
   components: {
@@ -74,7 +75,7 @@ export default {
   },
   methods: {
     selectReward() {
-      this.rewardSelected = !this.rewardSelected;
+      this.selected = !this.selected;
     }
   }
 };

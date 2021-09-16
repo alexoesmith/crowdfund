@@ -1,5 +1,8 @@
 <template>
-  <div class="fixed inset-0 flex justify-center py-20 bg-black bg-opacity-70">
+  <div
+    class="fixed inset-0 flex justify-center py-20 bg-black bg-opacity-70"
+    @click.self="handleModal"
+  >
     <div
       class="bg-white rounded-lg max-w-[800px] p-10 relative overflow-scroll"
     >
