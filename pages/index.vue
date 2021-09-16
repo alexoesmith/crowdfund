@@ -2,7 +2,7 @@
   <div>
     <TheHeader />
     <Banner />
-    <div class="space-y-6">
+    <div class="pb-20 space-y-6">
       <ProductIntro @handle-modal="handleModal" />
       <ProductStats :stats="productStats" />
       <ProductInfo>
@@ -11,6 +11,7 @@
           :key="product.id"
           :product="product"
           @handle-modal="handleModal"
+          @select-reward="selectReward"
         />
       </ProductInfo>
     </div>
@@ -19,7 +20,8 @@
         v-for="product in products"
         :key="product.id"
         :product="product"
-        :selectedReward="selectedReward"
+        :selected="selectedReward"
+        @select-reward="selectReward"
       />
     </ProductModal>
   </div>
@@ -46,7 +48,6 @@ export default {
     ProductModal,
     ProductSelectModal
   },
-
   data() {
     return {
       products: [
@@ -82,16 +83,16 @@ export default {
         daysLeft: 56
       },
       showModal: false,
-      selectedReward: null
+      selectedReward: 0
     };
   },
   methods: {
-    handleModal(id) {
+    handleModal() {
       this.showModal = !this.showModal;
-      this.selectedReward = id;
+      this.selectedReward = 0;
     },
-    sayHello() {
-      this.showModal = !this.showModal;
+    selectReward(id) {
+      this.selectedReward = id;
     }
   }
 };

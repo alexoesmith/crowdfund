@@ -6,7 +6,10 @@
   >
     <div class="flex items-center justify-between">
       <h5 class="text-xl font-bold">Bamboo Stand</h5>
-      <p class="text-sm text-moderate-cyan">
+      <p
+        class="text-sm text-moderate-cyan"
+        :class="{ '!text-dark-gray': product.amountLeft === 0 }"
+      >
         Pledge ${{ product.pledgeAmount }} or more
       </p>
     </div>
@@ -19,7 +22,7 @@
       <Btn
         :class="{ '!bg-dark-gray': product.amountLeft === 0 }"
         :disabled="product.amountLeft === 0"
-        @click.native="handleModal(product.id)"
+        @click.native="handleModal(), selectReward(product.id)"
       >
         Select Reward
       </Btn>
@@ -37,8 +40,11 @@ export default {
     Btn
   },
   methods: {
-    handleModal(id) {
-      this.$emit("handle-modal", id);
+    handleModal() {
+      this.$emit("handle-modal");
+    },
+    selectReward(id) {
+      this.$emit("select-reward", id);
     }
   }
 };

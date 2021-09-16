@@ -3,23 +3,23 @@
     class="w-full border border-gray-300 rounded-lg"
     :class="{
       'opacity-30 pointer-events-none': product.amountLeft === 0,
-      '!border-moderate-cyan': selected || selectedReward === product.id
+      '!border-moderate-cyan': product.id == selected
     }"
   >
     <div class="flex items-start justify-between p-6">
       <div class="flex items-center space-x-5">
         <div
           class="w-[22px] h-[22px] border rounded-full flex items-center justify-center hover:cursor-pointer"
-          @click="selectReward"
+          @click="selectReward(product.id)"
         >
           <div
-            v-show="selected || selectedReward === product.id"
+            v-show="product.id == selected"
             class="w-[12px] h-[12px] bg-moderate-cyan rounded-full"
           ></div>
         </div>
         <h3
           class="text-xl font-bold cursor-pointer hover:text-moderate-cyan"
-          @click="selectReward"
+          @click="selectReward(product.id)"
         >
           {{ product.title }}
         </h3>
@@ -39,10 +39,7 @@
         {{ product.body }}
       </p>
     </div>
-    <div
-      v-show="selected || selectedReward === product.id"
-      class="w-full p-6 border-t"
-    >
+    <div v-show="product.id == selected" class="w-full p-6 border-t">
       <div class="flex items-center justify-between">
         <div>
           <p class="text-sm text-dark-gray">Enter your pledge</p>
@@ -64,18 +61,16 @@
 <script>
 import Btn from "./Btn.vue";
 export default {
-  props: ["product", "selectedReward"],
+  props: ["product", "selected"],
   data() {
-    return {
-      selected: false
-    };
+    return {};
   },
   components: {
     Btn
   },
   methods: {
-    selectReward() {
-      this.selected = !this.selected;
+    selectReward(id) {
+      this.$emit("select-reward", id);
     }
   }
 };
