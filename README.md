@@ -42,13 +42,9 @@ Users should be able to:
 - [NuxtJS](https://nuxtjs.org/) - Vue framework
 - [Tailwind CSS](https://tailwindcss.com/) - For styles
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
 ### Continued development
 
 Going forward I would like to refactor this app to utilise Vuex to better manage the app's state. The current process is emitting custom events and passing data as props. Integrating Vuex into this project will help me better understand the concepts in a realistic scenario.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ## Author
 
