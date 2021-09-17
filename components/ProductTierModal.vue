@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full border-2 border-gray-300 rounded-lg"
+    class="w-full border border-gray-300 rounded-lg"
     :class="{
       'opacity-30 pointer-events-none': product.amountLeft === 0,
       '!border-moderate-cyan': product.id == selected
