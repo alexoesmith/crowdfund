@@ -16,7 +16,7 @@
           @click="toggleBookmark"
         >
           <div
-            class="flex items-center justify-center w-12 h-12 text-xl rounded-full md:w-20 md:h-20 sm:absolute -left-6 top-1/2 sm:transform sm:-translate-y-1/2"
+            class="flex items-center justify-center w-12 h-12 text-xl rounded-full sm:w-20 sm:h-20 sm:absolute -left-6 top-1/2 sm:transform sm:-translate-y-1/2"
             :class="
               bookmarked
                 ? 'bg-moderate-cyan text-white'
@@ -26,7 +26,12 @@
             <i class="fas fa-bookmark"></i>
           </div>
           <div
-            class="w-[200px] py-5 pr-12 text-sm font-semibold bg-gray-200 rounded-full shadow-sm pl-14 sm:block hidden"
+            class="w-[200px] py-6 pr-12 text-sm font-semibold rounded-full shadow-sm pl-20 sm:block hidden"
+            :class="
+              bookmarked
+                ? 'bg-moderate-cyan bg-opacity-10 text-moderate-cyan'
+                : 'bg-gray-200'
+            "
           >
             <span v-if="!bookmarked">Bookmark</span>
             <span v-else class="text-moderate-cyan">Bookmarked</span>
