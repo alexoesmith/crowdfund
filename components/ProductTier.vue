@@ -27,7 +27,8 @@
         :disabled="product.amountLeft === 0"
         @click.native="handleModal(), selectReward(product.id)"
       >
-        Select Reward
+        <span v-if="product.amountLeft > 0">Select Reward</span>
+        <span v-else>Out of Stock</span>
       </Btn>
     </div>
     <slot></slot>
