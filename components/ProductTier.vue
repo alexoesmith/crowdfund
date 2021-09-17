@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full p-6 border-2 border-gray-300 rounded-lg md:p-10"
+    class="w-full p-4 border-2 border-gray-300 rounded-lg md:p-10"
     :class="{ '!opacity-30 pointer-events-none': product.amountLeft === 0 }"
   >
     <div

@@ -7,7 +7,7 @@
     }"
   >
     <!-- Product details -->
-    <div class="flex items-start justify-between p-6">
+    <div class="flex items-start justify-between p-4 md:p-6">
       <div class="flex items-center space-x-5">
         <div
           class="w-[22px] h-[22px] border rounded-full flex items-center justify-center hover:cursor-pointer"

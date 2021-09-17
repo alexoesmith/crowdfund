@@ -16,7 +16,7 @@
           @click="toggleBookmark"
         >
           <div
-            class="w-[70px] h-[70px] text-xl rounded-full flex items-center justify-center sm:absolute -left-6 top-1/2 sm:transform sm:-translate-y-1/2"
+            class="flex items-center justify-center w-12 h-12 text-xl rounded-full md:w-20 md:h-20 sm:absolute -left-6 top-1/2 sm:transform sm:-translate-y-1/2"
             :class="
               bookmarked
                 ? 'bg-moderate-cyan text-white'

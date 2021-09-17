@@ -22,7 +22,9 @@
         <p class="text-sm text-dark-gray">days left</p>
       </div>
     </div>
-    <div class="w-full h-4 mt-10 overflow-hidden bg-gray-200 rounded-lg">
+    <div
+      class="w-full h-4 mt-4 overflow-hidden bg-gray-200 rounded-lg md:mt-10"
+    >
       <div
         class="h-full rounded-lg bg-moderate-cyan"
         :style="{ width: raised + '%' }"

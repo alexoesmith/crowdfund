@@ -19,7 +19,7 @@ module.exports = {
     },
     container: {
       center: true,
-      padding: "2rem"
+      padding: "1.2rem"
     },
     fontFamily: {
       body: "'Commissioner', sans-serif"
