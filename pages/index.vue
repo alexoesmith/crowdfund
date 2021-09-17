@@ -103,7 +103,7 @@ export default {
     handleSuccessModal() {
       this.showSuccess = !this.showSuccess;
     },
-    contrainBody() {
+    constrainBody() {
       const body = document.body;
       if (this.showSuccess || this.showModal) {
         body.classList.add("overflow-hidden");
