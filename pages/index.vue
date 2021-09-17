@@ -6,7 +6,7 @@
       <ProductIntro @handle-modal="handleModal" />
       <ProductStats :stats="productStats" />
       <ProductInfo>
-        <ProductSelect
+        <ProductTier
           v-for="product in products"
           :key="product.id"
           :product="product"
@@ -16,14 +16,20 @@
       </ProductInfo>
     </div>
     <ProductModal v-show="showModal" @handle-modal="handleModal">
-      <ProductSelectModal
+      <ProductTierModal
         v-for="product in products"
         :key="product.id"
         :product="product"
         :selected="selectedReward"
         @select-reward="selectReward"
+        @set-data="handleData"
+        @handle-success-modal="handleSuccessModal"
       />
     </ProductModal>
+    <SuccessModal
+      v-show="showSuccess"
+      @handle-success-modal="handleSuccessModal"
+    />
   </div>
 </template>
 
@@ -33,9 +39,10 @@ import Banner from "../components/Banner.vue";
 import ProductIntro from "../components/ProductIntro.vue";
 import ProductStats from "../components/ProductStats.vue";
 import ProductInfo from "../components/ProductInfo.vue";
-import ProductSelect from "../components/ProductSelect.vue";
-import ProductSelectModal from "../components/ProductSelectModal.vue";
+import ProductTier from "../components/ProductTier.vue";
+import ProductTierModal from "../components/ProductTierModal.vue";
 import ProductModal from "../components/ProductModal.vue";
+import SuccessModal from "../components/SuccessModal.vue";
 
 export default {
   components: {
@@ -44,9 +51,10 @@ export default {
     ProductIntro,
     ProductStats,
     ProductInfo,
-    ProductSelect,
+    ProductTier,
     ProductModal,
-    ProductSelectModal
+    ProductTierModal,
+    SuccessModal
   },
   data() {
     return {
@@ -83,6 +91,7 @@ export default {
         daysLeft: 56
       },
       showModal: false,
+      showSuccess: false,
       selectedReward: 0
     };
   },
@@ -91,8 +100,26 @@ export default {
       this.showModal = !this.showModal;
       this.selectedReward = 0;
     },
+    handleSuccessModal() {
+      this.showSuccess = !this.showSuccess;
+    },
+    contrainBody() {
+      const body = document.body;
+      if (this.showSuccess || this.showModal) {
+        body.classList.add("overflow-hidden");
+      } else {
+        body.classList.remove("overflow-hidden");
+      }
+    },
     selectReward(id) {
       this.selectedReward = id;
+    },
+    handleData(productId, amountPledged) {
+      this.productStats.totalBackers++;
+      this.productStats.totalPledged =
+        this.productStats.totalPledged + parseInt(amountPledged);
+      this.showModal = false;
+      this.products[productId - 1].amountLeft--;
     }
   }
 };

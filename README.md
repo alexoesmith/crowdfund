@@ -1,69 +1,58 @@
-# nuxt-playground
+# Frontend Mentor - Crowdfunding product page solution
 
-## Build Setup
+This is a solution to the [Crowdfunding product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/crowdfunding-product-page-7uvcZe7ZR). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-```bash
-# install dependencies
-$ yarn install
+## Table of contents
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-# build for production and launch server
-$ yarn build
-$ yarn start
+## Overview
 
-# generate static project
-$ yarn generate
-```
+### The challenge
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+Users should be able to:
 
-## Special Directories
+- View the optimal layout depending on their device's screen size
+- See hover states for interactive elements
+- Make a selection of which pledge to make
+- See an updated progress bar and total money raised based on their pledge total after confirming a pledge
+- See the number of total backers increment by one after confirming a pledge
+- Toggle whether or not the product is bookmarked
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+### Links
 
-### `assets`
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+## My process
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+### Built with
 
-### `components`
+- Vue/Nuxt
+- Tailwind CSS
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [Vue.js](https://vuejs.org/) - JS framework
+- [NuxtJS](https://nuxtjs.org/) - Vue framework
+- [Tailwind CSS](https://tailwindcss.com/) - For styles
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+### Continued development
 
-### `layouts`
+Going forward I would like to refactor this app to utilise Vuex to better manage the app's state. The current process is emitting custom events and passing data as props. Integrating Vuex into this project will help me better understand the concepts in a realistic scenario.
 
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+## Author
 
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+- Website - [Add your name here](https://www.your-site.com)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Twitter - [@yourusername](https://www.twitter.com/yourusername)

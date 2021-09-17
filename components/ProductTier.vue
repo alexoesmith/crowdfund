@@ -1,11 +1,12 @@
 <template>
   <div
-    class="w-full p-10 border border-gray-300 rounded-lg"
+    class="w-full p-6 border-2 border-gray-300 rounded-lg md:p-10"
     :class="{ '!opacity-30 pointer-events-none': product.amountLeft === 0 }"
-    data-aos="fade-up"
   >
-    <div class="flex items-center justify-between">
-      <h5 class="text-xl font-bold">Bamboo Stand</h5>
+    <div
+      class="flex flex-col items-start justify-between md:items-center md:flex-row"
+    >
+      <h5 class="pb-2 text-xl font-bold md:pb-0">{{ product.title }}</h5>
       <p
         class="text-sm text-moderate-cyan"
         :class="{ '!text-dark-gray': product.amountLeft === 0 }"
@@ -14,8 +15,10 @@
       </p>
     </div>
     <p class="pt-6 leading-relaxed text-dark-gray">{{ product.body }}</p>
-    <div class="flex items-center justify-between pt-6">
-      <div class="flex items-center">
+    <div
+      class="flex flex-col items-start justify-between pt-6 md:items-center md:flex-row"
+    >
+      <div class="flex items-center pb-6 md:pb-0">
         <span class="text-4xl font-bold">{{ product.amountLeft }}</span>
         <span class="pl-2 text-sm leading-none text-dark-gray">left</span>
       </div>
@@ -40,9 +43,11 @@ export default {
     Btn
   },
   methods: {
+    // Emit event to index to handle the modal state
     handleModal() {
       this.$emit("handle-modal");
     },
+    // Emit event to index to handle the selected reward in the modal
     selectReward(id) {
       this.$emit("select-reward", id);
     }

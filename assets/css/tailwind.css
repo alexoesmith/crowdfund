@@ -7,7 +7,3 @@
     @apply bg-gray-100 font-body;
   }
 }
-
-.container {
-  @apply max-w-[1440px];
-}

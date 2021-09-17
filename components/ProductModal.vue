@@ -1,10 +1,10 @@
 <template>
   <div
-    class="fixed inset-0 flex justify-center py-20 bg-black bg-opacity-70"
+    class="fixed inset-0 z-20 flex justify-center py-10 bg-black bg-opacity-70"
     @click.self="handleModal"
   >
     <div
-      class="bg-white rounded-lg max-w-[800px] p-10 relative overflow-scroll"
+      class="bg-white rounded-lg max-w-[800px] md:p-10 p-6 relative overflow-scroll m-auto h-full"
     >
       <span
         class="absolute top-0 right-0 p-4 text-3xl text-dark-gray hover:cursor-pointer"
@@ -17,6 +17,7 @@
         Want to support us in bringing Mastercraft Bamboo Monitor Riser out in
         the world?
       </p>
+      <!-- Product tiers -->
       <div class="pt-10 space-y-4">
         <slot></slot>
       </div>
@@ -27,6 +28,7 @@
 <script>
 export default {
   methods: {
+    // Emit event to index to handle the modal state
     handleModal() {
       this.$emit("handle-modal");
     }
