@@ -45,9 +45,3 @@ Users should be able to:
 ### Continued development
 
 Going forward I would like to refactor this app to utilise Vuex to better manage the app's state. The current process is emitting custom events and passing data as props. Integrating Vuex into this project will help me better understand the concepts in a realistic scenario.
-
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
