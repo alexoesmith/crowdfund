@@ -90,7 +90,7 @@ export default {
   props: ["product", "selected"],
   data() {
     return {
-      amountPledged: null,
+      amountPledged: this.$props.product.pledgeAmount,
       invalidInput: false,
       emptyInput: false
     };
