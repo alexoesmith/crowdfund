@@ -99,7 +99,6 @@ export default {
     handleModal() {
       this.showModal = !this.showModal;
       this.selectedReward = null;
-      this.constrainBody();
     },
     handleSuccessModal() {
       this.showSuccess = !this.showSuccess;
