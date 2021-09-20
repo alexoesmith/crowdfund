@@ -92,13 +92,13 @@ export default {
       },
       showModal: false,
       showSuccess: false,
-      selectedReward: 0
+      selectedReward: null
     };
   },
   methods: {
     handleModal() {
       this.showModal = !this.showModal;
-      this.selectedReward = 0;
+      this.selectedReward = null;
     },
     handleSuccessModal() {
       this.showSuccess = !this.showSuccess;
